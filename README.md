@@ -1,27 +1,29 @@
 # runnsd
 Experiment code for the NSD and NSDmini experiments.
 
+<img width="832" height="636" alt="Screenshot 2026-10-08 at 10 05 21 PM" src="https://github.com/user-attachments/assets/b43c9211-04a2-4e93-a673-3f2ec413769e" />
+
 **NOTE: This documentation refers to the NSD experiment, but those files have not been fully migrated into this repository. Currently, please pay attention only to the "NSDmini"-specific content.**
 
-Key files:
+# Key files:
 - "runnsd.m" is the script that runs the experiment (nsd experiment)
 - "runnsdmini.m" is the script that runs the experiment (nsdmini experiment)
 
-Installation:
+# Installation:
 - You should install [knkutils](https://github.com/cvnlab/knkutils/) and Psychtoolbox, and add those to your MATLAB path.
 - Furthermore, go download nsd_stimuli.hdf5 (for nsd) and [nsdmini_stimuli.hdf5](http://cvnlab.net/runnsd/nsdmini_stimuli.hdf5) (for nsdmini) and put these large files into the folder "stimulusfiles".
   
-How to run the experiment:
+# How to run the experiment:
 - Connect your external display (if applicable).
 - Edit the parameters at the top of the script (e.g. runnsdmini.m). In particular, you will want to set the spatial and temporal resolution of your display (ptonparams).
 - Then run the script!
 
-On running the experiment:
+# On running the experiment:
 - For nsd, note that after running the experiment for the first time, the subject ID 
   is preserved and not requested again.
 - If you want to start from scratch, just do a clear all and run the script again.
 
-Stimulus information:
+# Stimulus information:
 - For nsd, there is a single "brick" of color images:
     425 pixels x 425 pixels x 73,000 images
   This is prepared in one single file prepared by Thomas Naselaris.
@@ -35,7 +37,7 @@ Stimulus information:
     515 images for which all 8 NSD subjects got all 3 presentations.
   - In nsdmini, we show the 515 images two times each using a 2/1 design.
 
-Experiment information:
+# Experiment information:
 - nsd experiment:
   - The entire experiment is intended to span 40 distinct scan sessions.
     When asked for the experiment number, you should enter a positive integer
@@ -80,7 +82,7 @@ Experiment information:
 - After a run completes, a .mat file is written out with timing information
   and keypress information. These are important; keep these .mat files!
 
-On experimental design (nsd):
+# On experimental design (nsd):
 - Each run consists of 12-s blank + (63 stimulus trials + 5 blank trials) * 4-s + 16-s blank = 300 s.
 - 63 * 12 = 756 stimulus trials which is 6 more than needed.
   Thus, every even run will have the 63th stimulus trial (which is the last of the 68 trials) 
@@ -116,7 +118,7 @@ On experimental design (nsd):
 - Note that because the same blank trial design and the same stimulus trial
   ordering is used across subjects, the "memory load" for each subject is identical.
 
-On experimental design (nsdmini):
+# On experimental design (nsdmini):
 - Each run consists of 15-s blank + (103 stimulus trials + 6 blank trials) * 3-s + 18-s blank = 360 s.
 - 103*10 = 1030 stimulus trials.
 - Each run has 120 trials (but only 103 are stimulus trials).
@@ -135,17 +137,17 @@ On experimental design (nsdmini):
 - Note that because the exact same sequencing is used across subjects, the
   "memory load" for each subject is identical.
 
-On anticipatory resources/predictive confounding effects:
+# On anticipatory resources/predictive confounding effects:
 - The blank trials are quasi-random, so that is good.
 - And most of the time, the subject is working.
 
-On task:
+# On task:
 - The subject is supposed to indicate for each stimulus whether they have
   seen it before (in any of the prior trials or prior scan sessions).
 - See runnsd[mini]_subjectinstructions.txt for what subjects should know.
   These instructions are shown to the subject before the run starts.
 
-Stimulus-size issues:
+# Stimulus-size issues:
 - The resolution of the prepared stimuli is 425 pixels x 425 pixels.
 - We use a PsychToolbox mechanism to resize the stimuli on-the-fly to a desired
   pixel resolution. This resizing mechanism involves linear interpolation, so 
@@ -156,12 +158,12 @@ Stimulus-size issues:
   This is achieved through the interpolation mechanisms mentioned above.
   (Alternatively, set whatever stimulus size you want.)
 
-Eyetracker:
+# Eyetracker:
 - There is support for Eyelink eyetracking, but this is very complex and
   should be scrutinized for each setup.
 - To turn off eyetracking, just set wanteyetracking to 0.
 
-Display-calibration issues:
+# Display-calibration issues:
 - Our strategy is to use "regular" monitor behavior, especially since
   computer photos are intended for regular monitors.
 - The BOLDscreen is a linear device, so when running on the BOLDscreen, we 
@@ -172,12 +174,12 @@ Display-calibration issues:
   could use a linear clut, like
     `ptonparams = {[],[],0};`
 
-Timing issues:
+# Timing issues:
 - The experiment code locks to the refresh rate of the display.
   Note that after each run completes, information is reported to the screen regarding the
   empirically measured duration of the experiment.
 
-Screen capture:
+# Screen capture:
 - for "fake cartoon images" (nsd):
   - Kendrick generated this using his home monitor which ran at 1440 x 900 @ 60 Hz resolution.
     Moreover, he used 10 deg as if it corresponds to the 900 vertical pixels.
@@ -195,7 +197,7 @@ Screen capture:
     When played on standard monitors, the saved movie looks like what 
     subjects actually see.
 
-Contents of the behavioral .mat file:
+# Contents of the behavioral .mat file:
 - Here is a description of some of the relevant variables that one might need to know 
   in order to analyze the behavioral data:
   - 'timeframes' - 1 x frames. The numbers indicate the actual empirical time
