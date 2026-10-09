@@ -1,0 +1,18 @@
+Please fixate the central dot throughout the whole run
+(even at the beginning and end of the run).
+
+You will see a series of photographs. Your task is to judge
+whether or not you have seen each photograph before.
+
+If you have never seen the presented photograph before,
+press the first button (INDEX finger = NEW).
+
+If the presented photograph is identical to one that you have seen before,
+press the second button (MIDDLE finger = OLD).
+
+The display will occasionally be "blank" for a number of seconds. When this happens,
+just keep your eyes on the central dot and wait for the next photograph to appear!
+
+Each run is 6 minutes.
+
+Waiting for scanner...
