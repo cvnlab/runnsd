@@ -206,3 +206,13 @@ Experiment code for the NSD and NSDmini experiments.
                  With the new implementation (nsdmini), NaNs are possible (for dropped frames).
   - 'timekeys' - N x 2 cell. This tells you what keys/buttons/triggers were pressed and when.
 - Hopefully, you won't need to slog through the .mat file, and can instead rely on runnsdminibehavioralanalysis.m.
+
+# Contents of the nsdmini_expdesign.mat file:
+- 'masterordering' is 1 x 1030 with the sequence of trials (indices relative to 515)
+- 'special515ix' is 1 x 515 with sorted indices of the 515 shared images (relative to 73k)
+- 'stimpattern' is 10 runs x 120 trials. elements are 0/1 indicating when stimulus trials actually occur.
+
+Note: special515ix(masterordering) is 1 x 1030 indicating the temporal sequence
+       of 73k-ids shown to each subject. This sequence refers only to the
+       stimulus trials (ignoring the blank trials and the rest periods at the
+       beginning and end of each run).
